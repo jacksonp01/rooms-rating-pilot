@@ -1,0 +1,802 @@
+[
+ {
+  "image_id": "living_AA0",
+  "room": "living",
+  "cell": "AA0",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 0,
+  "file": "stimuli/living_AA0.jpg",
+  "sha256": "8747b47ad86d8f3b4aac091c72cfb32ebfd77e10d8092155172129fe90d09f3a"
+ },
+ {
+  "image_id": "living_AA1",
+  "room": "living",
+  "cell": "AA1",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 1,
+  "file": "stimuli/living_AA1.jpg",
+  "sha256": "7f15f2ad69c455102d5b6effea5b2800de2d9bc81fb53be5130257304ee0e08a"
+ },
+ {
+  "image_id": "living_AA2",
+  "room": "living",
+  "cell": "AA2",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 2,
+  "file": "stimuli/living_AA2.jpg",
+  "sha256": "92e0ec22444711700e2660aa2c5c120368eb18b24c6d0a7c4b36b75a6edf6d54"
+ },
+ {
+  "image_id": "living_AC1",
+  "room": "living",
+  "cell": "AC1",
+  "room_factor": "A",
+  "furniture_factor": "C",
+  "clutter": 1,
+  "file": "stimuli/living_AC1.jpg",
+  "sha256": "7981188c978f91149e72b6867b3f1fd3e6671ababd995ee3b41bd33eb5125f36"
+ },
+ {
+  "image_id": "living_AC2",
+  "room": "living",
+  "cell": "AC2",
+  "room_factor": "A",
+  "furniture_factor": "C",
+  "clutter": 2,
+  "file": "stimuli/living_AC2.jpg",
+  "sha256": "1671e1280ed127f66de74bb90aa8a2c2e6a0d065fc049e68b61832920092b42e"
+ },
+ {
+  "image_id": "living_CA0",
+  "room": "living",
+  "cell": "CA0",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 0,
+  "file": "stimuli/living_CA0.jpg",
+  "sha256": "7a26a6ae8c1b7ac77e97c5f2a1973fd82fbb8185cbf0a6627fb803864e5b706f"
+ },
+ {
+  "image_id": "living_CA1",
+  "room": "living",
+  "cell": "CA1",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 1,
+  "file": "stimuli/living_CA1.jpg",
+  "sha256": "d7c1467481a3f9d2956ab06947b73d88f34ad0a623825619c95940bdf66c016f"
+ },
+ {
+  "image_id": "living_CA2",
+  "room": "living",
+  "cell": "CA2",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 2,
+  "file": "stimuli/living_CA2.jpg",
+  "sha256": "e46b675b715129ce6f37aa5255ec415da8f5248cf8a813730ee99218c7ac39e0"
+ },
+ {
+  "image_id": "living_CC1",
+  "room": "living",
+  "cell": "CC1",
+  "room_factor": "C",
+  "furniture_factor": "C",
+  "clutter": 1,
+  "file": "stimuli/living_CC1.jpg",
+  "sha256": "6aa47a201a4d6bc695b33cf23b3c491fa5cc9a27a0c703ad7f49642a07c22667"
+ },
+ {
+  "image_id": "living_CC2",
+  "room": "living",
+  "cell": "CC2",
+  "room_factor": "C",
+  "furniture_factor": "C",
+  "clutter": 2,
+  "file": "stimuli/living_CC2.jpg",
+  "sha256": "12559c651e6924deaa42235603808735601749336be861f765f09e7c871fc295"
+ },
+ {
+  "image_id": "den_AA0",
+  "room": "den",
+  "cell": "AA0",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 0,
+  "file": "stimuli/den_AA0.jpg",
+  "sha256": "d6a214d73d33fe8f41e7fef797af4e09d8737a415c90dd6425ad6904fabfc66d"
+ },
+ {
+  "image_id": "den_AA1",
+  "room": "den",
+  "cell": "AA1",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 1,
+  "file": "stimuli/den_AA1.jpg",
+  "sha256": "c030636dccca2353411a281a370a1238db45b65d8ca33dcc0c0ff84735447271"
+ },
+ {
+  "image_id": "den_AA2",
+  "room": "den",
+  "cell": "AA2",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 2,
+  "file": "stimuli/den_AA2.jpg",
+  "sha256": "725d1ef4803259320ece725fb2a711dd053e93fc0000784a21902de31b91fcb3"
+ },
+ {
+  "image_id": "den_AC1",
+  "room": "den",
+  "cell": "AC1",
+  "room_factor": "A",
+  "furniture_factor": "C",
+  "clutter": 1,
+  "file": "stimuli/den_AC1.jpg",
+  "sha256": "d5bcf89a90bf9bf073e4dcf7dc254bcf4ed8833a764dc112d46b306cb24b8635"
+ },
+ {
+  "image_id": "den_AC2",
+  "room": "den",
+  "cell": "AC2",
+  "room_factor": "A",
+  "furniture_factor": "C",
+  "clutter": 2,
+  "file": "stimuli/den_AC2.jpg",
+  "sha256": "30cda27fa5def12516743828bdd10cc45d1d6cc930ba2ec29e2d139a9e07dd3b"
+ },
+ {
+  "image_id": "den_CA0",
+  "room": "den",
+  "cell": "CA0",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 0,
+  "file": "stimuli/den_CA0.jpg",
+  "sha256": "61815677dee0f7129e177c83610071eb0ed7d5e666735d642f56856a5769de23"
+ },
+ {
+  "image_id": "den_CA1",
+  "room": "den",
+  "cell": "CA1",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 1,
+  "file": "stimuli/den_CA1.jpg",
+  "sha256": "6af4dbfef5d798632e09b9700ef37616e6b0f2430b7a86e855f20955402e8646"
+ },
+ {
+  "image_id": "den_CA2",
+  "room": "den",
+  "cell": "CA2",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 2,
+  "file": "stimuli/den_CA2.jpg",
+  "sha256": "93f8db8265555776954d32f1bfe8a077b3d746d6050dca32b11666dfc2c2b2d3"
+ },
+ {
+  "image_id": "den_CC1",
+  "room": "den",
+  "cell": "CC1",
+  "room_factor": "C",
+  "furniture_factor": "C",
+  "clutter": 1,
+  "file": "stimuli/den_CC1.jpg",
+  "sha256": "518b5fdf377e0c1f8690e738cc13a74db2c27013b5dc8128243d8dcd70817b00"
+ },
+ {
+  "image_id": "den_CC2",
+  "room": "den",
+  "cell": "CC2",
+  "room_factor": "C",
+  "furniture_factor": "C",
+  "clutter": 2,
+  "file": "stimuli/den_CC2.jpg",
+  "sha256": "32303fc34fb4f3b887e8a52de26cf234a032ad7c4219363590c9d3c45ab05f45"
+ },
+ {
+  "image_id": "attic_AA0",
+  "room": "attic",
+  "cell": "AA0",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 0,
+  "file": "stimuli/attic_AA0.jpg",
+  "sha256": "0746ea449034f50c7491eae3d4ac54de439cc78f4f56d6028668f11d8a42bb8a"
+ },
+ {
+  "image_id": "attic_AA1",
+  "room": "attic",
+  "cell": "AA1",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 1,
+  "file": "stimuli/attic_AA1.jpg",
+  "sha256": "86f517e3931ed1e6706779382e4ce2998094801a97bb9a2e2a1ea6b154b8b0f0"
+ },
+ {
+  "image_id": "attic_AA2",
+  "room": "attic",
+  "cell": "AA2",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 2,
+  "file": "stimuli/attic_AA2.jpg",
+  "sha256": "0c3fc9d909cca04a5b55976c98f55c5562cf09c9df6baaf445bfc65a7cc73866"
+ },
+ {
+  "image_id": "attic_AC1",
+  "room": "attic",
+  "cell": "AC1",
+  "room_factor": "A",
+  "furniture_factor": "C",
+  "clutter": 1,
+  "file": "stimuli/attic_AC1.jpg",
+  "sha256": "cacf66021e1a5c510d7357d7287a6d5385fe5d1fd042e1d09fe0d1841d154ce0"
+ },
+ {
+  "image_id": "attic_AC2",
+  "room": "attic",
+  "cell": "AC2",
+  "room_factor": "A",
+  "furniture_factor": "C",
+  "clutter": 2,
+  "file": "stimuli/attic_AC2.jpg",
+  "sha256": "9c6d6733f917916d687cb07547dde97a095c2fd0c101dcb2bcc003a36d848879"
+ },
+ {
+  "image_id": "attic_CA0",
+  "room": "attic",
+  "cell": "CA0",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 0,
+  "file": "stimuli/attic_CA0.jpg",
+  "sha256": "c5c54ebb0f9e4b97e51af59869fb70337729ac42cdfff97d67fbac551d98296f"
+ },
+ {
+  "image_id": "attic_CA1",
+  "room": "attic",
+  "cell": "CA1",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 1,
+  "file": "stimuli/attic_CA1.jpg",
+  "sha256": "83c85fab3812a25b7226f2167a09ed3a4b963d65de13201c40fccdece059d983"
+ },
+ {
+  "image_id": "attic_CA2",
+  "room": "attic",
+  "cell": "CA2",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 2,
+  "file": "stimuli/attic_CA2.jpg",
+  "sha256": "4c6b98419cc3c61a2820bdeb1b294d9f7d50b01dfddf743f81a02355e004e0ca"
+ },
+ {
+  "image_id": "attic_CC1",
+  "room": "attic",
+  "cell": "CC1",
+  "room_factor": "C",
+  "furniture_factor": "C",
+  "clutter": 1,
+  "file": "stimuli/attic_CC1.jpg",
+  "sha256": "6a3c29e4ec4898293ba52b5bfc182a81375227d56fe155c8c618c3fe15a6a4dd"
+ },
+ {
+  "image_id": "attic_CC2",
+  "room": "attic",
+  "cell": "CC2",
+  "room_factor": "C",
+  "furniture_factor": "C",
+  "clutter": 2,
+  "file": "stimuli/attic_CC2.jpg",
+  "sha256": "653ee9b83c9d9a883da112a61a988e23637c0a4e1338afdfbd67aeb2ee1ef62e"
+ },
+ {
+  "image_id": "dining_AA0",
+  "room": "dining",
+  "cell": "AA0",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 0,
+  "file": "stimuli/dining_AA0.jpg",
+  "sha256": "966b86becc6c2d6d055a78e7edda5575488e3bbd6024434909659609bb88e007"
+ },
+ {
+  "image_id": "dining_AA1",
+  "room": "dining",
+  "cell": "AA1",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 1,
+  "file": "stimuli/dining_AA1.jpg",
+  "sha256": "d9dc25f2ed06f87f6a6ff2c9ed88d904ac98c1085d75b9b9913c7b2000845b4e"
+ },
+ {
+  "image_id": "dining_AA2",
+  "room": "dining",
+  "cell": "AA2",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 2,
+  "file": "stimuli/dining_AA2.jpg",
+  "sha256": "7a718ac8eec253c81ff15a1915072a706736f339e26a1b80e82601cd65bf3aa4"
+ },
+ {
+  "image_id": "dining_AC1",
+  "room": "dining",
+  "cell": "AC1",
+  "room_factor": "A",
+  "furniture_factor": "C",
+  "clutter": 1,
+  "file": "stimuli/dining_AC1.jpg",
+  "sha256": "6a4f6b3a1503454be7bfc62260c3b5be65b5a79b7e0bac8cf90aa7863a13df56"
+ },
+ {
+  "image_id": "dining_AC2",
+  "room": "dining",
+  "cell": "AC2",
+  "room_factor": "A",
+  "furniture_factor": "C",
+  "clutter": 2,
+  "file": "stimuli/dining_AC2.jpg",
+  "sha256": "623c673ca927b6114e7dd5d68bda8f236bd2957ab1ebc03025bcfa5840b5d81d"
+ },
+ {
+  "image_id": "dining_CA0",
+  "room": "dining",
+  "cell": "CA0",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 0,
+  "file": "stimuli/dining_CA0.jpg",
+  "sha256": "a6dbff4dfa40b051822c3bea260ab369710514e60684a6cdae5c1bfabc92a95e"
+ },
+ {
+  "image_id": "dining_CA1",
+  "room": "dining",
+  "cell": "CA1",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 1,
+  "file": "stimuli/dining_CA1.jpg",
+  "sha256": "ed33e81ab79d8b895b3cd6c91a06de65c0b0ca2aa63d3474854c94674e7df347"
+ },
+ {
+  "image_id": "dining_CA2",
+  "room": "dining",
+  "cell": "CA2",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 2,
+  "file": "stimuli/dining_CA2.jpg",
+  "sha256": "e364ecdf004f280992995823ae455e5d0f1e52adab4e0ad9734b47fd100a549e"
+ },
+ {
+  "image_id": "dining_CC1",
+  "room": "dining",
+  "cell": "CC1",
+  "room_factor": "C",
+  "furniture_factor": "C",
+  "clutter": 1,
+  "file": "stimuli/dining_CC1.jpg",
+  "sha256": "9a96c4b2931eb0caf80ebff493e565e08e585e0ababf02ba95684f06039e2d64"
+ },
+ {
+  "image_id": "dining_CC2",
+  "room": "dining",
+  "cell": "CC2",
+  "room_factor": "C",
+  "furniture_factor": "C",
+  "clutter": 2,
+  "file": "stimuli/dining_CC2.jpg",
+  "sha256": "3344597b986b8443cd90e3c9384a4d3f6156c1680efb34f43bc1d4df258ffbb5"
+ },
+ {
+  "image_id": "bedroom_AA0",
+  "room": "bedroom",
+  "cell": "AA0",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 0,
+  "file": "stimuli/bedroom_AA0.jpg",
+  "sha256": "8e8c7494e33f2c1d1821ef58583208f2cb5d618a7290bee239fb777ee9299a15"
+ },
+ {
+  "image_id": "bedroom_AA1",
+  "room": "bedroom",
+  "cell": "AA1",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 1,
+  "file": "stimuli/bedroom_AA1.jpg",
+  "sha256": "3f64c96a53ce0d3eddd88dd7922148121f2b7cd4389b033ab03be1245c9d7f15"
+ },
+ {
+  "image_id": "bedroom_AA2",
+  "room": "bedroom",
+  "cell": "AA2",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 2,
+  "file": "stimuli/bedroom_AA2.jpg",
+  "sha256": "db40c6e1d2b735aee7fc0d76e0d23e4333953d44c3d7aacb3d25175f4b70026b"
+ },
+ {
+  "image_id": "bedroom_AC1",
+  "room": "bedroom",
+  "cell": "AC1",
+  "room_factor": "A",
+  "furniture_factor": "C",
+  "clutter": 1,
+  "file": "stimuli/bedroom_AC1.jpg",
+  "sha256": "0533f5d273eb4842ab62f7f8f812fbd7213d8aa7e3c6b3aef84fa46105f5197c"
+ },
+ {
+  "image_id": "bedroom_AC2",
+  "room": "bedroom",
+  "cell": "AC2",
+  "room_factor": "A",
+  "furniture_factor": "C",
+  "clutter": 2,
+  "file": "stimuli/bedroom_AC2.jpg",
+  "sha256": "9e14a5aea69f4d15c2e0b29df4294cacd363fdbd15116c119ad55e0a181d851d"
+ },
+ {
+  "image_id": "bedroom_CA0",
+  "room": "bedroom",
+  "cell": "CA0",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 0,
+  "file": "stimuli/bedroom_CA0.jpg",
+  "sha256": "ba59a68bdf91111fca0aacd9a320c7afe4562ace7835b3ce69bc1e37f24e83b0"
+ },
+ {
+  "image_id": "bedroom_CA1",
+  "room": "bedroom",
+  "cell": "CA1",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 1,
+  "file": "stimuli/bedroom_CA1.jpg",
+  "sha256": "3bcd2ac8427868ebedfbaad68fee070c6cd9979c33add17d38da1cce68828761"
+ },
+ {
+  "image_id": "bedroom_CA2",
+  "room": "bedroom",
+  "cell": "CA2",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 2,
+  "file": "stimuli/bedroom_CA2.jpg",
+  "sha256": "4506bf15362b54bacaa18e2acc4d8ee2cc16a6d1bd2768b7e4b3a65aab1410c3"
+ },
+ {
+  "image_id": "bedroom_CC1",
+  "room": "bedroom",
+  "cell": "CC1",
+  "room_factor": "C",
+  "furniture_factor": "C",
+  "clutter": 1,
+  "file": "stimuli/bedroom_CC1.jpg",
+  "sha256": "9ead4c39949207ac4bf7af84ba9710a39e6bc3d45626bc8bc5c97de58cb6d27f"
+ },
+ {
+  "image_id": "bedroom_CC2",
+  "room": "bedroom",
+  "cell": "CC2",
+  "room_factor": "C",
+  "furniture_factor": "C",
+  "clutter": 2,
+  "file": "stimuli/bedroom_CC2.jpg",
+  "sha256": "683b2dca50f102601731b8c517067ec76345331157672f558a12f907ef2b0018"
+ },
+ {
+  "image_id": "study_AA0",
+  "room": "study",
+  "cell": "AA0",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 0,
+  "file": "stimuli/study_AA0.jpg",
+  "sha256": "47d822753cc2c5aa921a75bbd400e93fd2ca61575edd80f85a953de50b45a3ef"
+ },
+ {
+  "image_id": "study_AA1",
+  "room": "study",
+  "cell": "AA1",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 1,
+  "file": "stimuli/study_AA1.jpg",
+  "sha256": "1742d4707d8f164e08748bb3fc0847da9fccc91a4fb8cbcc25871016339e8922"
+ },
+ {
+  "image_id": "study_AA2",
+  "room": "study",
+  "cell": "AA2",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 2,
+  "file": "stimuli/study_AA2.jpg",
+  "sha256": "1f97905439bef2a5a39ee966aebbd20d72e672961d0e75eaaff04c7958193834"
+ },
+ {
+  "image_id": "study_AC1",
+  "room": "study",
+  "cell": "AC1",
+  "room_factor": "A",
+  "furniture_factor": "C",
+  "clutter": 1,
+  "file": "stimuli/study_AC1.jpg",
+  "sha256": "e29eaa1b530d06dadfba087a1634fc4665bbb58341ae2d72d60a6a23ebbc3f4a"
+ },
+ {
+  "image_id": "study_AC2",
+  "room": "study",
+  "cell": "AC2",
+  "room_factor": "A",
+  "furniture_factor": "C",
+  "clutter": 2,
+  "file": "stimuli/study_AC2.jpg",
+  "sha256": "fca2d85589a1f6ff53048a99fcc53c1e2830236650d13d02bb117a858c580fca"
+ },
+ {
+  "image_id": "study_CA0",
+  "room": "study",
+  "cell": "CA0",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 0,
+  "file": "stimuli/study_CA0.jpg",
+  "sha256": "3e5fcda828bed8561bc09bc9ba3bda3381b7536f6dfcc17b73c47df4aa353cb1"
+ },
+ {
+  "image_id": "study_CA1",
+  "room": "study",
+  "cell": "CA1",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 1,
+  "file": "stimuli/study_CA1.jpg",
+  "sha256": "a606d90a95be9af81aba6bd3b6dca70e4b8306079973738925687296e31dfe9d"
+ },
+ {
+  "image_id": "study_CA2",
+  "room": "study",
+  "cell": "CA2",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 2,
+  "file": "stimuli/study_CA2.jpg",
+  "sha256": "e8f8cf0d66889b3800e9e6c06ea457afb3d0e8bc3f33340b0cbcaa9da8cc8dd1"
+ },
+ {
+  "image_id": "study_CC1",
+  "room": "study",
+  "cell": "CC1",
+  "room_factor": "C",
+  "furniture_factor": "C",
+  "clutter": 1,
+  "file": "stimuli/study_CC1.jpg",
+  "sha256": "f1ec71db5c053339325f83d1413a37c75727bef0197794e78e847e4d9916dbf9"
+ },
+ {
+  "image_id": "study_CC2",
+  "room": "study",
+  "cell": "CC2",
+  "room_factor": "C",
+  "furniture_factor": "C",
+  "clutter": 2,
+  "file": "stimuli/study_CC2.jpg",
+  "sha256": "37dd52bde2d7159dd8cc40a88e963ede665c53dc8111ff8e34ecdf6278e68f75"
+ },
+ {
+  "image_id": "hall_AA0",
+  "room": "hall",
+  "cell": "AA0",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 0,
+  "file": "stimuli/hall_AA0.jpg",
+  "sha256": "d4684c4f8ed82c15a7311d40049b7af2fbd9cf02bdaa56e326e44e3433ae8c40"
+ },
+ {
+  "image_id": "hall_AA1",
+  "room": "hall",
+  "cell": "AA1",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 1,
+  "file": "stimuli/hall_AA1.jpg",
+  "sha256": "c5ea9199533df36ecb5ea75720b27a5a7d0d11af3bcdbb7e500aac1d4f8ee1fa"
+ },
+ {
+  "image_id": "hall_AA2",
+  "room": "hall",
+  "cell": "AA2",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 2,
+  "file": "stimuli/hall_AA2.jpg",
+  "sha256": "96a5c199db32ee40343cdc9a6196320fd4b5355cb6ce0416815f90aa4d910e63"
+ },
+ {
+  "image_id": "hall_AC1",
+  "room": "hall",
+  "cell": "AC1",
+  "room_factor": "A",
+  "furniture_factor": "C",
+  "clutter": 1,
+  "file": "stimuli/hall_AC1.jpg",
+  "sha256": "c17744d98b8f311168321cd6ea4f027d9f7725dd3302903bc297faa3f13269fe"
+ },
+ {
+  "image_id": "hall_AC2",
+  "room": "hall",
+  "cell": "AC2",
+  "room_factor": "A",
+  "furniture_factor": "C",
+  "clutter": 2,
+  "file": "stimuli/hall_AC2.jpg",
+  "sha256": "5461855c46c9af957d48bba47dfdcc6d31377c2b461fa35e08206a8de2559c4b"
+ },
+ {
+  "image_id": "hall_CA0",
+  "room": "hall",
+  "cell": "CA0",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 0,
+  "file": "stimuli/hall_CA0.jpg",
+  "sha256": "2f5e05ba1d102ac7aa62f092e3c95b05dbc564a3f07dfcc2e7194f528eb2102d"
+ },
+ {
+  "image_id": "hall_CA1",
+  "room": "hall",
+  "cell": "CA1",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 1,
+  "file": "stimuli/hall_CA1.jpg",
+  "sha256": "b04e788f07ea348e93d17c57c891540eed15a2ad11469d7e09c9aa3a8c7dc665"
+ },
+ {
+  "image_id": "hall_CA2",
+  "room": "hall",
+  "cell": "CA2",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 2,
+  "file": "stimuli/hall_CA2.jpg",
+  "sha256": "f2bb54c96412ec2eacc14b47c4f917727f1580b58c6e68fda09034daa6a780f9"
+ },
+ {
+  "image_id": "hall_CC1",
+  "room": "hall",
+  "cell": "CC1",
+  "room_factor": "C",
+  "furniture_factor": "C",
+  "clutter": 1,
+  "file": "stimuli/hall_CC1.jpg",
+  "sha256": "39769d9855a0e0ee16c7f24e4e4f3ce0171aa1116d3f03d13da17c80054646ae"
+ },
+ {
+  "image_id": "hall_CC2",
+  "room": "hall",
+  "cell": "CC2",
+  "room_factor": "C",
+  "furniture_factor": "C",
+  "clutter": 2,
+  "file": "stimuli/hall_CC2.jpg",
+  "sha256": "f8a54d64bdd634797240679db01d1be92d832686e9234205bd23e22607bdeeff"
+ },
+ {
+  "image_id": "lounge_AA0",
+  "room": "lounge",
+  "cell": "AA0",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 0,
+  "file": "stimuli/lounge_AA0.jpg",
+  "sha256": "a4521edb716d336a728c7eb1339b1c2116b70dcb5eece8155ecb47a6f33ae59c"
+ },
+ {
+  "image_id": "lounge_AA1",
+  "room": "lounge",
+  "cell": "AA1",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 1,
+  "file": "stimuli/lounge_AA1.jpg",
+  "sha256": "b0676d67367d7b3bcf767bce0563e6d851f9eeaa7ccec898c30ec22dbe084f85"
+ },
+ {
+  "image_id": "lounge_AA2",
+  "room": "lounge",
+  "cell": "AA2",
+  "room_factor": "A",
+  "furniture_factor": "A",
+  "clutter": 2,
+  "file": "stimuli/lounge_AA2.jpg",
+  "sha256": "ed5dabafe5a1b99e2234e64941cf52665dfae39eb4c40a060983a1c541995f3a"
+ },
+ {
+  "image_id": "lounge_AC1",
+  "room": "lounge",
+  "cell": "AC1",
+  "room_factor": "A",
+  "furniture_factor": "C",
+  "clutter": 1,
+  "file": "stimuli/lounge_AC1.jpg",
+  "sha256": "5bb0929c49fc4b1ee28a55afc56a29f3860e0d661cb64346e175db4feacc5c57"
+ },
+ {
+  "image_id": "lounge_AC2",
+  "room": "lounge",
+  "cell": "AC2",
+  "room_factor": "A",
+  "furniture_factor": "C",
+  "clutter": 2,
+  "file": "stimuli/lounge_AC2.jpg",
+  "sha256": "d70a6c1215f488ced93394fec0d1fbdcf9f7e2ce51d2a6b1777d528eab9b1a76"
+ },
+ {
+  "image_id": "lounge_CA0",
+  "room": "lounge",
+  "cell": "CA0",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 0,
+  "file": "stimuli/lounge_CA0.jpg",
+  "sha256": "144370944f3136aca25e0a6835c01d8c0c59c4524e5a8081da3e78bc4957f899"
+ },
+ {
+  "image_id": "lounge_CA1",
+  "room": "lounge",
+  "cell": "CA1",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 1,
+  "file": "stimuli/lounge_CA1.jpg",
+  "sha256": "7db4f4e06bfc9d00ee3050fa126b6a087a11f8d25ae9ea8eef97ae25aa820711"
+ },
+ {
+  "image_id": "lounge_CA2",
+  "room": "lounge",
+  "cell": "CA2",
+  "room_factor": "C",
+  "furniture_factor": "A",
+  "clutter": 2,
+  "file": "stimuli/lounge_CA2.jpg",
+  "sha256": "cec27f4441329cf9db43acc78e0fa56fca17199587c160ac0fa12d4888a04662"
+ },
+ {
+  "image_id": "lounge_CC1",
+  "room": "lounge",
+  "cell": "CC1",
+  "room_factor": "C",
+  "furniture_factor": "C",
+  "clutter": 1,
+  "file": "stimuli/lounge_CC1.jpg",
+  "sha256": "0907d33e088eb28bbc9b2879940575dec267f7a649132f0a70b5bf098b63e652"
+ },
+ {
+  "image_id": "lounge_CC2",
+  "room": "lounge",
+  "cell": "CC2",
+  "room_factor": "C",
+  "furniture_factor": "C",
+  "clutter": 2,
+  "file": "stimuli/lounge_CC2.jpg",
+  "sha256": "6d485b6d5ee3a2f1dad5d6efee29072d7a8148d1fd41e8941507c8e2b321cbb2"
+ }
+]
