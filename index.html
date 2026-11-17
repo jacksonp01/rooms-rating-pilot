@@ -10,40 +10,56 @@
 <script src="room-rating-plugin.js"></script>
 <style>
   body { background: #f4f4f2; font-family: system-ui, Segoe UI, Arial, sans-serif; }
-  .jspsych-content { max-width: 1300px; }
+  .jspsych-content { max-width: none; }
   .txt { max-width: 760px; margin: 0 auto; text-align: left; font-size: 18px; line-height: 1.5; }
-  .rr { display: flex; gap: 28px; align-items: flex-start; justify-content: center; text-align: left; }
-  .rr img { width: 880px; height: 660px; display: block; border-radius: 3px; background: #ddd; }
-  .rr .panel { width: 330px; }
-  .rr .q { margin-bottom: 30px; }
-  .rr .q p { font-size: 17px; margin: 0 0 10px; line-height: 1.35; }
-  .rr .scale { display: flex; gap: 6px; }
-  .rr .scale button { flex: 1; font-size: 18px; padding: 10px 0; border: 1px solid #888; background: #fff; border-radius: 4px; cursor: pointer; }
-  .rr .scale button:hover { background: #e6eef8; }
-  .rr .scale button.sel { background: #2b5fa8; color: #fff; border-color: #2b5fa8; }
-  .rr .ends { display: flex; justify-content: space-between; font-size: 13px; color: #555; margin-top: 4px; }
-  .rr .next { font-size: 18px; padding: 10px 28px; border: 0; border-radius: 4px; background: #2b5fa8; color: #fff; cursor: pointer; }
-  .rr .next:disabled { background: #b8b8b8; cursor: default; }
-  .practice-tag { font-size: 13px; color: #a05a00; margin-bottom: 8px; }
+  .rr { display: flex; gap: 36px; align-items: center; justify-content: center; text-align: left; }
+  .rr img { display: block; border-radius: 3px; background: #ddd; flex: none; }
+  .rr .panel { width: 340px; flex: none; }
+  .rr .q { margin-bottom: 38px; }
+  .rr .q p { font-size: 18px; margin: 0 0 14px; line-height: 1.35; }
+  .vas { -webkit-appearance: none; appearance: none; width: 100%; height: 28px; background: transparent; cursor: pointer; margin: 0; }
+  .vas::-webkit-slider-runnable-track { height: 6px; background: #9aa3ad; border-radius: 3px; }
+  .vas::-moz-range-track { height: 6px; background: #9aa3ad; border-radius: 3px; }
+  .vas::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 26px; margin-top: -10px; border-radius: 4px; background: #2b5fa8; border: 0; }
+  .vas::-moz-range-thumb { width: 18px; height: 26px; border-radius: 4px; background: #2b5fa8; border: 0; }
+  .vas.untouched::-webkit-slider-thumb { opacity: 0; }
+  .vas.untouched::-moz-range-thumb { opacity: 0; }
+  .ends { display: flex; justify-content: space-between; font-size: 14px; color: #444; margin-top: 6px; }
+  .next { font-size: 18px; padding: 10px 28px; border: 0; border-radius: 4px; background: #2b5fa8; color: #fff; cursor: pointer; }
+  .next:disabled { background: #b8b8b8; cursor: default; }
+  .practice-tag { font-size: 13px; color: #a05a00; margin-bottom: 10px; }
+  .warn { color: #a00; }
 </style>
 </head>
 <body></body>
 <script>
-// Experiment: PRESPEC_experiment_rooms.md Sections 4.3-4.4. 80 registered images, each once, curvature + liking on one screen
-// (question order counterbalanced across participants), 2 practice images, 4 attention checks. Results saved by serve.py.
+// Experiment: PRESPEC_experiment_rooms.md 4.2-4.4 (revision 2026-11-16 b). Desktop only; bank-card calibration, images 20 x 15 cm that
+// stay on screen; the question panel beside the image fades in after 3 s; 0-100 sliders (no starting handle, no numbers).
+// Block 1: curvature (80 images). Block 2: liking + approach on one screen (same 80, new order; order of the two questions
+// counterbalanced). 2 practice images and 2 attention checks per block.
+// Design expertise at the end. Results saved by serve.py (or downloaded as a file without it).
 (async function () {
-  // With serve.py: number and question order from /assign. Without it (static site, e.g. GitHub Pages): ?pid=7 in the URL
-  // (odd = curvature first, as in serve.py), else a random number; results are then downloaded as a file at the end.
   const urlN = parseInt(new URLSearchParams(location.search).get('pid'), 10);
   const n0 = Number.isFinite(urlN) && urlN > 0 ? urlN : Math.floor(Math.random() * 1e3);
-  let assign = { n: n0, curv_first: n0 % 2 === 1 };
+  let assign = { n: n0 };
   let server = false;
   try {
     const r = await fetch('assign');
     if (r.ok && (r.headers.get('Content-Type') || '').includes('json')) { assign = await r.json(); server = true; }
   } catch (e) { console.warn('no server: ' + e); }
   const pid = 'p' + String(assign.n).padStart(3, '0');
-  const curvFirst = assign.curv_first;
+  const likeFirst = assign.n % 2 === 1;          // block 2: odd numbers see liking above approach
+  const TEST = new URLSearchParams(location.search).get('test') === '1';   // ?test=1: questions after 0.1 s, for checking the page; flagged in the data
+  const IMG_W_CM = 20, IMG_H_CM = 15, PANEL_PX = 340, MIN_SCREEN_CM = 26, REVEAL_MS = TEST ? 100 : 3000;
+  let pxcm = null;
+  const imgW = () => Math.round(IMG_W_CM * pxcm), imgH = () => Math.round(IMG_H_CM * pxcm);
+
+  const mobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent));
+  if (mobile) {
+    document.body.innerHTML = '<div style="text-align:center;margin-top:120px;font:20px system-ui"><h2>Please use a computer</h2>' +
+      '<p>This study needs a desktop or laptop computer with a large screen. Phones and tablets cannot take part.</p></div>';
+    return;
+  }
 
   const jsPsych = initJsPsych({ on_finish: async () => {
     const ok = await saveData(true);
@@ -51,8 +67,8 @@
     document.body.innerHTML = `<div style="text-align:center;margin-top:120px;font:20px system-ui"><h2>Done</h2><p>${msg} You can close this window.</p></div>`;
   } });
   jsPsych.data.addProperties({
-    participant: pid, curv_first: curvFirst, user_agent: navigator.userAgent,
-    screen_w: screen.width, screen_h: screen.height, start_time: new Date().toISOString()
+    participant: pid, like_first: likeFirst, protocol: '2026-11-16b', test_mode: TEST, user_agent: navigator.userAgent,
+    screen_w: screen.width, screen_h: screen.height, device_pixel_ratio: window.devicePixelRatio, start_time: new Date().toISOString()
   });
 
   async function saveData(complete) {
@@ -75,90 +91,103 @@
   ];
   const allFiles = stimuli.map(s => s.file).concat(practice.map(p => p.file));
 
-  const ratingTrial = (item, isPractice) => ({
-    type: jsPsychRoomRating,
-    image: item.file,
-    curv_first: curvFirst,
-    q_curv: 'How curved or angular does this room look?',
-    q_like: 'How much do you like this room?',
-    labels_curv: ['very angular', 'very curvy'],
-    labels_like: ['not at all', 'very much'],
-    practice: isPractice,
-    data: Object.assign({ task: isPractice ? 'practice' : 'rating' }, item)
+  const Q = {
+    curvature: { key: 'curvature', text: 'How curved or angular does this room look?', labels: ['very angular', 'very curvy'] },
+    liking: { key: 'liking', text: 'How much do you like this room?', labels: ['not at all', 'very much'] },
+    approach: { key: 'approach', text: 'How much would you want to go into this room and spend time in it?', labels: ['not at all', 'very much'] }
+  };
+  const blocks = [
+    { name: 'curvature', questions: [Q.curvature] },
+    { name: 'evaluation', questions: likeFirst ? [Q.liking, Q.approach] : [Q.approach, Q.liking] }
+  ];
+
+  const ratingTrial = (item, block, isPractice) => ({
+    type: jsPsychRoomRating, image: item.file, img_w: () => imgW(), img_h: () => imgH(), reveal_ms: REVEAL_MS,
+    questions: block.questions, practice: isPractice,
+    data: Object.assign({ task: isPractice ? 'practice' : 'rating', block: block.name }, item)
   });
+  const page = (html, button, task) => ({ type: jsPsychHtmlButtonResponse, stimulus: `<div class="txt">${html}</div>`, choices: [button], data: { task } });
 
   const timeline = [];
-  const MIN_W = 1270, MIN_H = 700;
-  const sizeOk = () => window.innerWidth >= MIN_W && window.innerHeight >= MIN_H;
+  timeline.push(page(`<h2>Room ratings</h2>
+    <p>In this experiment you will look at pictures of rooms and answer questions about them. It takes about 25 minutes.
+    You can stop at any time by closing the window.</p>
+    <p>Please make this browser window as large as you can (press F11 for full screen) and keep it that way until the end.</p>`, 'Continue', 'welcome'));
+
+  // calibration, then a size check that updates as the window is resized; Continue is enabled once the picture and questions fit
+  timeline.push({ type: jsPsychCardCalibration, data: { task: 'calibration' }, on_finish: d => { pxcm = d.px_per_cm; } });
+  const needW = () => imgW() + PANEL_PX + 80, needH = () => imgH() + 40;
+  const fits = () => window.innerWidth >= needW() && window.innerHeight >= needH();
+  const screenCm = () => Math.max(screen.width, window.innerWidth) / pxcm;   // some browsers report screen.width 0
   timeline.push({
-    timeline: [{
-      type: jsPsychHtmlButtonResponse,
-      stimulus: () => `<div class="txt"><h2>Room ratings</h2>
-        <p>In this short experiment you will look at pictures of rooms and rate them. It takes about 20 minutes.
-        You can stop at any time by closing the window. Your responses stay on this computer; nothing is sent over the internet.</p>
-        <p>The pictures are large. Please use a computer (not a phone) and make this browser window as large as you
-        can (press F11 for full screen).</p>
-        <p style="color:#a00">${sizeOk() ? '' :
-          `Your window is ${window.innerWidth} x ${window.innerHeight}; it needs to be at least ${MIN_W} x ${MIN_H}. Please enlarge it, then press Continue.`}</p></div>`,
-      choices: ['Continue'],
-      data: { task: 'window_check' },
-      on_finish: d => { d.window_w = window.innerWidth; d.window_h = window.innerHeight; }
-    }],
-    loop_function: () => !sizeOk()
+    type: jsPsychHtmlButtonResponse, choices: ['Continue'], data: { task: 'size_check' },
+    stimulus: () => screenCm() < MIN_SCREEN_CM
+      ? `<div class="txt"><h2>Screen too small</h2><p>Your screen is about ${screenCm().toFixed(0)} cm wide; this study needs at least
+         ${MIN_SCREEN_CM} cm. Thank you for your interest. Press Continue to finish.</p></div>`
+      : `<div class="txt"><p>Please sit about an arm's length (about 57 cm) from the screen and keep that distance throughout.</p>
+         <p id="sizemsg"></p></div>`,
+    on_load: () => {
+      if (screenCm() < MIN_SCREEN_CM) return;
+      const btn = document.querySelector('.jspsych-content button'), msg = document.getElementById('sizemsg');
+      const upd = () => {
+        const ok = fits(); btn.disabled = !ok;
+        msg.className = ok ? '' : 'warn';
+        msg.textContent = ok ? 'The window is large enough. Press Continue.'
+          : `The window is too small for the pictures: it is ${window.innerWidth} x ${window.innerHeight} pixels and needs at least
+             ${needW()} x ${needH()}. Make it larger (press F11 for full screen); Continue will become available when it fits.`;
+      };
+      upd(); window.addEventListener('resize', upd); window.__sizeUpd = upd;
+    },
+    on_finish: d => {
+      window.removeEventListener('resize', window.__sizeUpd);
+      d.window_w = window.innerWidth; d.window_h = window.innerHeight; d.screen_cm = screenCm(); d.screen_w_at_check = screen.width;
+      if (d.screen_cm < MIN_SCREEN_CM) jsPsych.abortExperiment('<div class="txt"><p>The study has ended. Thank you.</p></div>');
+    }
   });
 
   timeline.push({ type: jsPsychPreload, images: allFiles, show_progress_bar: true, message: '<p>Loading the pictures ...</p>', data: { task: 'preload' } });
 
-  timeline.push({
-    type: jsPsychHtmlButtonResponse,
-    stimulus: `<div class="txt"><h2>Instructions</h2>
-      <p>You will see 80 pictures of rooms, one at a time. For each picture you answer two questions on a scale from 1 to 5:</p>
-      <ul><li><b>How curved or angular does this room look?</b> 1 = very angular, 5 = very curvy.</li>
-      <li><b>How much do you like this room?</b> 1 = not at all, 5 = very much.</li></ul>
-      <p>Go with your first impression; there are no right or wrong answers. Both questions are on the same screen.
-      Press <b>Next</b> after answering both.</p>
-      <p>Now and then a screen will ask you to click a given number. Please follow it.</p>
-      <p>First, two practice pictures.</p></div>`,
-    choices: ['Start practice'], data: { task: 'instructions' }
-  });
-  practice.forEach(p => timeline.push(ratingTrial(p, true)));
-  timeline.push({
-    type: jsPsychHtmlButtonResponse,
-    stimulus: '<div class="txt"><p>That was the practice. The real pictures start now.</p></div>',
-    choices: ['Start'], data: { task: 'instructions' }
-  });
-
-  // 80 test trials in a random order; 4 attention checks (before trial 14, 34, 54, 70, each +-3)
-  const order = jsPsych.randomization.shuffle(stimuli.slice());
-  const checkAt = [14, 34, 54, 70].map(p => p + Math.floor(Math.random() * 7) - 3);
+  const intro = {
+    curvature: `<h2>Part 1 of 2</h2><p>You will see 80 pictures of rooms, one at a time. Each picture stays on the screen; after a few
+      seconds a question appears beside it:</p>
+      <ul><li><b>${Q.curvature.text}</b></li></ul>
+      <p>Answer by clicking on the line, anywhere between <i>very angular</i> (left end) and <i>very curvy</i> (right end). You can drag
+      the marker to adjust it before pressing <b>Next</b>.</p>`,
+    evaluation: `<h2>Part 2 of 2</h2><p>You will now see the same 80 pictures again, in a new order. After a few seconds two questions
+      appear beside each picture:</p>
+      <ul>${blocks[1].questions.map(q => `<li><b>${q.text}</b> (from <i>${q.labels[0]}</i> to <i>${q.labels[1]}</i>)</li>`).join('')}</ul>
+      <p>Answer each by clicking on its line, then press <b>Next</b>.</p>`
+  };
   let nRated = 0;
-  order.forEach((item, i) => {
-    if (checkAt.includes(i)) {
-      const target = 1 + Math.floor(Math.random() * 5);
-      timeline.push({
-        type: jsPsychHtmlButtonResponse,
-        stimulus: `<div class="txt" style="text-align:center"><p>To show that you are paying attention, please click the number <b>${target}</b>.</p></div>`,
-        choices: ['1', '2', '3', '4', '5'],
-        data: { task: 'attention', target },
-        on_finish: d => { d.correct = (d.response + 1) === d.target; }
-      });
-    }
-    const t = ratingTrial(item, false);
-    t.data.trial_index_in_block = i;
-    t.on_finish = () => { if (++nRated % 10 === 0) saveData(false); };
-    timeline.push(t);
+  blocks.forEach(block => {
+    timeline.push(page(intro[block.name] + `<p>Go with your first impression; there are no right or wrong answers.</p>
+      <p>Now and then a screen will ask you to click a given number. Please follow it.</p><p>First, two practice pictures.</p>`,
+      'Start practice', 'instructions'));
+    practice.forEach(p => timeline.push(ratingTrial(p, block, true)));
+    timeline.push(page('<p>That was the practice. The real pictures start now.</p>', 'Start', 'instructions'));
+    const order = jsPsych.randomization.shuffle(stimuli.slice());
+    const checkAt = [25, 55].map(p => p + Math.floor(Math.random() * 7) - 3);
+    order.forEach((item, i) => {
+      if (checkAt.includes(i)) {
+        const target = 1 + Math.floor(Math.random() * 5);
+        timeline.push({ type: jsPsychHtmlButtonResponse, choices: ['1', '2', '3', '4', '5'], data: { task: 'attention', block: block.name, target },
+          stimulus: `<div class="txt" style="text-align:center"><p>To show that you are paying attention, please click the number <b>${target}</b>.</p></div>`,
+          on_finish: d => { d.correct = (d.response + 1) === d.target; } });
+      }
+      const t = ratingTrial(item, block, false);
+      t.data.trial_index_in_block = i;
+      t.on_finish = () => { if (++nRated % 10 === 0) saveData(false); };
+      timeline.push(t);
+    });
   });
 
-  timeline.push({
-    type: jsPsychHtmlButtonResponse,
-    stimulus: '<div class="txt" style="text-align:center"><h2>Thank you</h2><p>You have finished. Press Finish to save your responses.</p></div>',
-    choices: ['Finish'], data: { task: 'end' }
-  });
-  timeline.push({
-    type: jsPsychHtmlButtonResponse,
-    stimulus: '<div class="txt" style="text-align:center"><p>Saving ...</p></div>',
-    choices: [], trial_duration: 1500, data: { task: 'done' }
-  });
+  const EXPERTISE = ['None', 'Some courses', 'A degree', 'I work in the field'];
+  timeline.push({ type: jsPsychHtmlButtonResponse, choices: EXPERTISE, data: { task: 'expertise' },
+    stimulus: '<div class="txt"><p>Have you had training in architecture, interior design, or another art or design field?</p></div>',
+    on_finish: d => { d.expertise = EXPERTISE[d.response]; } });
+  timeline.push(page('<div style="text-align:center"><h2>Thank you</h2><p>You have finished. Press Finish to save your responses.</p></div>', 'Finish', 'end'));
+  timeline.push({ type: jsPsychHtmlButtonResponse, stimulus: '<div class="txt" style="text-align:center"><p>Saving ...</p></div>',
+    choices: [], trial_duration: 1500, data: { task: 'done' } });
 
   jsPsych.run(timeline);
 })();
